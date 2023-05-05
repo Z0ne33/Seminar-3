@@ -4,13 +4,12 @@ public class Payment{
 
 
     public Amount amountPaid;
-    Amount change;
-
+    public Amount current;
+    public Amount change;
 
     public Payment(Amount _amountPaid, Amount price){
         this.amountPaid = _amountPaid;
-
-
+        current = new Amount(amountPaid.amount);
     }
     public void updateRegister(Amount amt, Amount price, Amount _change){
         Register register = new Register(amt, price, Change(price));

@@ -4,9 +4,11 @@ import Model.Amount;
 import Model.Item;
 import Model.SaleDTO;
 
+import java.util.Objects;
+
 public class ExternalSystem {
 
-  Item [] items = new Item[2];
+     Item [] items = new Item[2];
 
 
     public ExternalSystem(){
@@ -31,11 +33,11 @@ public class ExternalSystem {
     // The Following method has the task to return The item thas is being purchased
     public Item returnItem(String ItemID){
         for (int i = 0; i < items.length; i++){
-            if (items[i].itemID == ItemID){
+            if (Objects.equals(items[i].itemID, ItemID)){
                 return items[i];
             }
         }
-        return items[0];
+        return null;
 
     }
 
